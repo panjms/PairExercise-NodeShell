@@ -10,7 +10,9 @@ const cat = function (fileNames) {
       }
     });
   });
-  process.stdout.write("prompt > ");
+  setTimeout(() => {
+    process.stdout.write("prompt > ");
+  }, 5);
 };
 
 module.exports = cat;

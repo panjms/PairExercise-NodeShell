@@ -15,7 +15,6 @@ process.stdin.on("data", (data) => {
     ls();
   } else if (cmdScript === "cat") {
     cat(cmd.slice(1));
-    process.stdout.write("\nprompt > ");
   } else {
     process.stdout.write("You typed: " + cmd);
     process.stdout.write("\nprompt > ");
