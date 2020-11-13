@@ -1,18 +1,18 @@
 const fs = require("fs");
 
-const cat = function (fileNames) {
-  fileNames.forEach((fileName) => {
+const cat = function (done, fileNames) {
+
+
+fileNames.reduce((acc, fileName, i) => {
     fs.readFile(`./${fileName}`, "utf8", (err, data) => {
       if (err) {
         throw err;
       } else {
-        process.stdout.write(data.toString());
+        return acc + data.toString();
       }
     });
-  });
-  setTimeout(() => {
-    process.stdout.write("prompt > ");
-  }, 5);
+  }, '')
+
 };
 
 module.exports = cat;

@@ -1,6 +1,5 @@
-const pwd = function () {
-  process.stdout.write(`Current directory: ${process.cwd()}`);
-  process.stdout.write("\nprompt > ");
+const pwd = function (done) {
+  done(`${process.cwd()}`);
 };
 
 module.exports = pwd;
